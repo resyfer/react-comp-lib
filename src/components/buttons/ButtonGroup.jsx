@@ -20,6 +20,7 @@ function ButtonGroup(props) {
           disabled={button.disabled}
           outline={button.outline || props.outline}
           key={button.link + button.text}
+          classList={button.classList || []}
         />
       ))}
     </div>

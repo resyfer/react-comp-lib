@@ -72,6 +72,7 @@ const buttonGroupData = [
     text: "Link 3",
     link: "/",
     disabled: true,
+    classList: ["text-black"],
   },
 ];
 

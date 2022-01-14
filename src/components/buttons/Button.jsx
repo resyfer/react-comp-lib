@@ -35,6 +35,7 @@ function Button(props) {
 
   // Classes
   const staticClasses = ["text-center", "uppercase", "transition-colors"];
+  props.classList && staticClasses.push(...props.classList);
 
   const dynamicList = useCallback(
     () => ({
