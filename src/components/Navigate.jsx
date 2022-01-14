@@ -11,7 +11,7 @@ function Navigate() {
             <Link to="/button">Normal Button</Link>
           </li>
           <li>
-            <Link to="/outlined-button">Outlined Button</Link>
+            <Link to="/button-group">Button Group</Link>
           </li>
         </ul>
       </li>
