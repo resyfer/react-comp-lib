@@ -1,29 +1,33 @@
+import { useCallback } from "react";
+
 import { useNavigate } from "react-router-dom";
+
+let counter = 0;
 
 function Button(props) {
   const navigate = useNavigate();
 
-  const size = (() => {
+  const size = useCallback(() => {
     if (props.small)
       return {
-        py: "1",
-        px: "2",
-        fontSize: "xs",
+        px: "px-2",
+        py: "py-1",
+        fontSize: "text-xs",
       };
     else
       return {
-        py: "2",
-        px: "3",
-        fontSize: "base",
+        px: "px-3",
+        py: "py-2",
+        fontSize: "text-base",
       };
-  })();
+  }, [props])(props);
 
   return (
     <button
       className={`
-        py-${size.py}
-        px-${size.px}
-        text-${size.fontSize}
+        ${size.py}
+        ${size.px}
+        ${size.fontSize}
         rounded
         text-center
         uppercase

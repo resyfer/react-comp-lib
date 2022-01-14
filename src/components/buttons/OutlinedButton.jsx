@@ -1,36 +1,38 @@
+import { useCallback } from "react";
+
 import { useNavigate } from "react-router-dom";
 
 function OutlinedButton(props) {
   const navigate = useNavigate();
 
-  const size = (() => {
+  const size = useCallback(() => {
     if (props.small)
       return {
-        py: "1",
-        px: "2",
-        fontSize: "xs",
-        border: null,
+        px: "px-2",
+        py: "py-1",
+        fontSize: "text-xs",
+        border: "",
       };
     else
       return {
-        py: "2",
-        px: "3",
-        fontSize: "base",
-        border: "2",
+        px: "px-3",
+        py: "py-2",
+        fontSize: "text-base",
+        border: "border-2",
       };
-  })();
+  }, [props])(props);
 
   return (
     <button
       className={`
-        py-${size.py}
-        px-${size.px}
-        text-${size.fontSize}
+        ${size.py}
+        ${size.px}
+        ${size.fontSize}
         rounded
         text-center
         uppercase
         transition-colors
-        border${size.border ? `-${size.border}` : ""}
+        ${size.border}
         border-transparent
         text-primary
         hover:border-primary

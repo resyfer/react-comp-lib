@@ -11,7 +11,17 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />}>
-            <Route path="button" element={<Button link="#" text="Button" />} />
+            <Route
+              path="button"
+              element={
+                <>
+                  <Button link="/" text="Button" />
+                  {/* <br />
+                  <br />
+                  <Button link="/" disabled text="Button" /> */}
+                </>
+              }
+            />
             <Route
               path="outlined-button"
               element={<OutlinedButton link="#" text="Outline" />}
