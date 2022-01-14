@@ -2,8 +2,6 @@ import { useCallback } from "react";
 
 import { useNavigate } from "react-router-dom";
 
-let counter = 0;
-
 function Button(props) {
   const navigate = useNavigate();
 
