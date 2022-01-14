@@ -6,14 +6,14 @@ function Button(props) {
   const size = (() => {
     if (props.small)
       return {
-        py: 1,
-        px: 2,
+        py: "1",
+        px: "2",
         fontSize: "xs",
       };
     else
       return {
-        py: 2,
-        px: 3,
+        py: "2",
+        px: "3",
         fontSize: "base",
       };
   })();

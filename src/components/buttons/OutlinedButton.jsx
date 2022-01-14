@@ -6,17 +6,17 @@ function OutlinedButton(props) {
   const size = (() => {
     if (props.small)
       return {
-        py: 1,
-        px: 2,
+        py: "1",
+        px: "2",
         fontSize: "xs",
         border: null,
       };
     else
       return {
-        py: 2,
-        px: 3,
+        py: "2",
+        px: "3",
         fontSize: "base",
-        border: 2,
+        border: "2",
       };
   })();
 
