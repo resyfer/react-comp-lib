@@ -12,7 +12,6 @@ function ButtonGroup(props) {
     >
       {props.buttons.map((button) => (
         <Button
-          small={button.small}
           flat
           text={button.text}
           link={button.link}

@@ -41,7 +41,6 @@ function Button(props) {
     () => ({
       ...size,
       rounded: props.flat ? "" : "rounded",
-      bg: props.outline ? "" : "bg-primary",
 
       text: props.outline
         ? "text-primary focus:text-back"
@@ -57,7 +56,7 @@ function Button(props) {
 
       disabled: props.disabled ? "cursor-not-allowed" : "",
     }),
-    [props]
+    [props, border, size]
   )(props);
 
   return (
