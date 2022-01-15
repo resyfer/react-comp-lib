@@ -1,13 +1,30 @@
 import Button from "./Button";
 
+/**
+ * Props:
+ *    flat (bool)
+ *    small (bool)
+ *    outline (bool)
+ *    vertical (bool)
+ *
+ * Button keys:
+ *    text (string)
+ *    link (string)
+ *    disabled (bool)
+ *    outline (bool)
+ *    classList ([string])
+ *    func (function () => void)
+ */
+
 function ButtonGroup(props) {
   return (
     <div
       className={`
-      countainer
+      flex
+      ${props.vertical ? "flex-col" : ""}
       overflow-hidden
       w-fit
-      ${props.flat ? "" : "rounded"}
+      ${props.flat ? "" : "rounded-md"}
     `}
     >
       {props.buttons.map((button) => (
@@ -15,11 +32,12 @@ function ButtonGroup(props) {
           flat
           text={button.text}
           link={button.link}
-          small={props.small}
+          size={props.size}
           disabled={button.disabled}
           outline={button.outline || props.outline}
-          key={button.link + button.text}
           classList={button.classList || []}
+          func={button.func}
+          key={button.link + button.text}
         />
       ))}
     </div>

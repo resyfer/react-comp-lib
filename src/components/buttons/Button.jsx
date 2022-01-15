@@ -2,22 +2,40 @@ import { useCallback } from "react";
 
 import { useNavigate } from "react-router-dom";
 
+/**
+ * Props:
+ *    text (string)
+ *    link (string)
+ *    flat (bool)
+ *    size (string: small || large)
+ *    disabled (bool)
+ *    outline (bool)
+ *    classList ([string])
+ *    func (function () => void)
+ */
+
 function Button(props) {
   const navigate = useNavigate();
 
   // Calculate
   const size = useCallback(() => {
-    if (props.small)
+    if (props.size == "small")
       return {
-        px: "px-2",
+        px: "px-1 md:px-2",
         py: "py-1",
-        fontSize: "text-xs",
+        fontSize: "text-micro md:text-xs",
+      };
+    else if (props.size == "large")
+      return {
+        px: "px-3 md:px-7",
+        py: "py-2 md:py-4",
+        fontSize: "text-sm md:text-base",
       };
     else
       return {
-        px: "px-3",
-        py: "py-2",
-        fontSize: "text-base",
+        px: "px-1 md:px-3",
+        py: "py-1 md:py-2",
+        fontSize: "text-xs md:text-sm",
       };
   }, [props])(props);
 
@@ -66,6 +84,7 @@ function Button(props) {
       }
       onClick={(e) => {
         e.preventDefault();
+        props.func && props.func({ e });
         !props.disabled && navigate(props.link);
       }}
     >

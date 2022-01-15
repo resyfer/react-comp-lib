@@ -3,7 +3,7 @@ import Navigate from "../components/Navigate";
 
 function Home() {
   return (
-    <div className="pl-4">
+    <div className="m-4">
       <Navigate />
       <br />
       <hr />

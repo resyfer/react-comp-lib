@@ -2,6 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
 
+import Break from "./components/Break";
+
 import Button from "./components/buttons/Button";
 import ButtonGroup from "./components/buttons/ButtonGroup";
 
@@ -15,22 +17,19 @@ function App() {
               path="button"
               element={
                 <>
-                  <Button link="/" text="Button" />
-                  <br />
-                  <br />
+                  <Button link="/" func={clickBtn} text="Button" />
+                  <Break />
                   <Button link="/" flat text="Flat" />
-                  <br />
-                  <br />
+                  <Break />
                   <Button link="/" disabled text="Disabled" />
-                  <br />
-                  <br />
+                  <Break />
                   <Button link="/" outline text="Outline" />
-                  <br />
-                  <br />
+                  <Break />
                   <Button link="/" outline disabled text="Disable" />
-                  <br />
-                  <br />
-                  <Button link="/" small text="Small" />
+                  <Break />
+                  <Button link="/" size="large" text="Large" />
+                  <Break />
+                  <Button link="/" size="small" text="Small" />
                 </>
               }
             />
@@ -39,15 +38,16 @@ function App() {
               element={
                 <>
                   <ButtonGroup buttons={buttonGroupData} />
-                  <br />
-                  <br />
+                  <Break />
                   <ButtonGroup flat buttons={buttonGroupData} />
-                  <br />
-                  <br />
+                  <Break />
                   <ButtonGroup outline buttons={buttonGroupData} />
-                  <br />
-                  <br />
-                  <ButtonGroup small buttons={buttonGroupData} />
+                  <Break />
+                  <ButtonGroup vertical buttons={buttonGroupData} />
+                  <Break />
+                  <ButtonGroup size="large" buttons={buttonGroupData} />
+                  <Break />
+                  <ButtonGroup size="small" buttons={buttonGroupData} />
                 </>
               }
             />
@@ -63,6 +63,9 @@ const buttonGroupData = [
     text: "Link 1",
     link: "/",
     outline: true,
+    func: ({ e }) => {
+      console.log(e);
+    },
   },
   {
     text: "Link 2",
@@ -75,5 +78,9 @@ const buttonGroupData = [
     classList: ["text-black"],
   },
 ];
+
+function clickBtn({ e }) {
+  console.log(e);
+}
 
 export default App;
