@@ -19,13 +19,13 @@ function Button(props) {
 
   // Calculate
   const size = useCallback(() => {
-    if (props.size == "small")
+    if (props.size === "small")
       return {
         px: "px-1 md:px-2",
         py: "py-1",
         fontSize: "text-micro md:text-xs",
       };
-    else if (props.size == "large")
+    else if (props.size === "large")
       return {
         px: "px-3 md:px-7",
         py: "py-2 md:py-4",
