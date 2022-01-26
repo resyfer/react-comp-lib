@@ -11,7 +11,7 @@ function TextInput(props) {
         : "w-full",
     }),
     [props]
-  )(props);
+  )();
 
   return (
     <div className={`input-cont h-12 ${Object.values(dynamicList).join(" ")}`}>

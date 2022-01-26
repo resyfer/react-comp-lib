@@ -66,7 +66,7 @@ function App() {
                     placeholder="Name Full"
                     type="text"
                   />
-                  <br />
+                  <Break />
                   <Input
                     value={textInputValue}
                     setValue={setTextInputValue}
@@ -75,7 +75,7 @@ function App() {
                     small
                     type="text"
                   />
-                  <br />
+                  <Break />
                   <Input
                     value={textInputValue}
                     setValue={setTextInputValue}
@@ -83,6 +83,37 @@ function App() {
                     trim
                     tiny
                     type="text"
+                  />
+                </>
+              }
+            />
+            <Route
+              path="pswd-input"
+              element={
+                <>
+                  <Input
+                    value={textInputValue}
+                    setValue={setTextInputValue}
+                    placeholder="Pswd Full"
+                    type="password"
+                  />
+                  <Break />
+                  <Input
+                    value={textInputValue}
+                    setValue={setTextInputValue}
+                    placeholder="Pswd Small"
+                    trim
+                    small
+                    type="password"
+                  />
+                  <Break />
+                  <Input
+                    value={textInputValue}
+                    setValue={setTextInputValue}
+                    placeholder="Pswd Tiny"
+                    trim
+                    tiny
+                    type="password"
                   />
                 </>
               }
