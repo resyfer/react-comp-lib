@@ -12,6 +12,8 @@ import Input from "./components/form/Input";
 
 function App() {
   const [textInputValue, setTextInputValue] = useState("");
+  const [optionsValue, setOptionsValue] = useState(-1);
+  const [multiplOptionsValue, setMultipleOptionsValue] = useState([]);
 
   return (
     <div className="App">
@@ -118,6 +120,27 @@ function App() {
                 </>
               }
             />
+            <Route
+              path="options-input"
+              element={
+                <>
+                  <Input
+                    value={optionsValue}
+                    setValue={setOptionsValue}
+                    options={options}
+                    type="options"
+                  />
+                  <Break />
+                  <Input
+                    value={multiplOptionsValue}
+                    setValue={setMultipleOptionsValue}
+                    options={options}
+                    type="options"
+                    multiple
+                  />
+                </>
+              }
+            />
           </Route>
         </Routes>
       </Router>
@@ -143,6 +166,21 @@ const buttonGroupData = [
     link: "/",
     disabled: true,
     classList: ["text-red-500"],
+  },
+];
+
+const options = [
+  {
+    name: "Option 1",
+    value: 5,
+  },
+  {
+    name: "Option 2",
+    value: "hello world",
+  },
+  {
+    name: "Option 3",
+    value: true,
   },
 ];
 

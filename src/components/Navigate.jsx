@@ -25,6 +25,9 @@ function Navigate() {
           <li>
             <Link to="/pswd-input">Password Input</Link>
           </li>
+          <li>
+            <Link to="/options-input">Options Input</Link>
+          </li>
         </ul>
       </li>
     </ul>
