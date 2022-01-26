@@ -57,7 +57,7 @@ function App() {
               }
             />
             <Route
-              path="input"
+              path="text-input"
               element={
                 <>
                   <Input
