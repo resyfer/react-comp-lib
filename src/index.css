@@ -2,6 +2,7 @@
 
 body {
   font-family: "Nunito", sans-serif;
+  min-height: 100%;
 }
 
 @tailwind base;

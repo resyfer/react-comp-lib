@@ -41,8 +41,10 @@ function Button(props) {
 
   const border = useCallback(() => {
     if (props.outline) {
-      if (props.small) {
+      if (props.size === "small") {
         return "border";
+      } else if (props.size === "large") {
+        return "border-3";
       } else {
         return "border-2";
       }

@@ -15,6 +15,15 @@ function Navigate() {
           </li>
         </ul>
       </li>
+      <li>
+        {" "}
+        Forms
+        <ul className="list-decimal ml-4">
+          <li>
+            <Link to="/input">Input</Link>
+          </li>
+        </ul>
+      </li>
     </ul>
   );
 }

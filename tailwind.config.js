@@ -8,6 +8,12 @@ module.exports = {
         tertiary: "#6C8DAE",
         back: "#F5F9FF",
       },
+      borderWidth: {
+        3: "3px",
+      },
+      fontFamily: {
+        nunito: ["Nunito", "sans-serif"],
+      },
     },
     fontSize: {
       micro: ".25rem",
@@ -23,9 +29,6 @@ module.exports = {
       "5xl": "3rem",
       "6xl": "4rem",
       "7xl": "5rem",
-    },
-    fontFamiy: {
-      nunito: ["Nunito", "sans-serif"],
     },
   },
   plugins: [],

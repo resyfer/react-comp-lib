@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
@@ -7,7 +8,11 @@ import Break from "./components/Break";
 import Button from "./components/buttons/Button";
 import ButtonGroup from "./components/buttons/ButtonGroup";
 
+import Input from "./components/form/Input";
+
 function App() {
+  const [textInputValue, setTextInputValue] = useState("");
+
   return (
     <div className="App">
       <Router>
@@ -51,6 +56,16 @@ function App() {
                 </>
               }
             />
+            <Route
+              path="input"
+              element={
+                <Input
+                  value={textInputValue}
+                  setValue={setTextInputValue}
+                  placeholder="Username"
+                />
+              }
+            />
           </Route>
         </Routes>
       </Router>
@@ -75,7 +90,7 @@ const buttonGroupData = [
     text: "Link 3",
     link: "/",
     disabled: true,
-    classList: ["text-black"],
+    classList: ["text-red-500"],
   },
 ];
 
