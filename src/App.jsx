@@ -59,11 +59,32 @@ function App() {
             <Route
               path="input"
               element={
-                <Input
-                  value={textInputValue}
-                  setValue={setTextInputValue}
-                  placeholder="Username"
-                />
+                <>
+                  <Input
+                    value={textInputValue}
+                    setValue={setTextInputValue}
+                    placeholder="Name Full"
+                    type="text"
+                  />
+                  <br />
+                  <Input
+                    value={textInputValue}
+                    setValue={setTextInputValue}
+                    placeholder="Name Small"
+                    trim
+                    small
+                    type="text"
+                  />
+                  <br />
+                  <Input
+                    value={textInputValue}
+                    setValue={setTextInputValue}
+                    placeholder="Name Tiny"
+                    trim
+                    tiny
+                    type="text"
+                  />
+                </>
               }
             />
           </Route>

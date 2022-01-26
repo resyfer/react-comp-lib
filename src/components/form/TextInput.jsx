@@ -1,10 +1,22 @@
+import { useCallback } from "react";
 import "./TextInput.scss";
 
 function TextInput(props) {
+  const dynamicList = useCallback(
+    () => ({
+      width: props.tiny
+        ? "w-1/2 lg:w-1/4"
+        : props.small
+        ? "w-3/4 lg:w-1/2"
+        : "w-full",
+    }),
+    [props]
+  )(props);
+
   return (
-    <div className="input-cont h-12 w-fit">
+    <div className={`input-cont h-12 ${Object.values(dynamicList).join(" ")}`}>
       <input
-        className="input-elem bg-transparent pl-3 pr-2 h-full top-1/2 -translate-y-1/2 box-border border-2 border-primary/10 rounded focus:border-primary text-primary"
+        className="input-elem w-full bg-transparent pl-3 pr-2 h-full top-1/2 -translate-y-1/2 box-border border-2 border-primary/10 rounded focus:border-primary text-primary"
         type="text"
         htmlFor={props.for}
         name={props.name}
