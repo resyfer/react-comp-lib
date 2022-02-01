@@ -1,7 +1,3 @@
-:root {
-  --back: #f5f9ff;
-}
-
 .input-cont {
   position: relative;
 }
@@ -29,5 +25,5 @@
   margin-left: 0.25rem;
   font-size: 0.8rem;
   transition: 0.1s ease-in-out;
-  background-color: var(--back);
+  @apply bg-back;
 }
