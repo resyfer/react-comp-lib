@@ -124,13 +124,16 @@ function App() {
               path="options-input"
               element={
                 <>
+                  <p>Single Choice</p>
                   <Input
                     value={optionsValue}
                     setValue={setOptionsValue}
                     options={options}
                     type="options"
                   />
+                  <p>Choices Index: {optionsValue}</p>
                   <Break />
+                  <p>Multiple Choice</p>
                   <Input
                     value={multiplOptionsValue}
                     setValue={setMultipleOptionsValue}
@@ -138,6 +141,7 @@ function App() {
                     type="options"
                     multiple
                   />
+                  <p>Choices: [{multiplOptionsValue.join(", ")}]</p>
                 </>
               }
             />
@@ -175,8 +179,9 @@ const options = [
     value: 5,
   },
   {
-    name: "Option 2",
+    name: "Disabled Option",
     value: "hello world",
+    disabled: true,
   },
   {
     name: "Option 3",

@@ -1,7 +1,7 @@
 import { useState, useCallback } from "react";
 import "./PswdInput.scss";
 
-function TextInput(props) {
+function PswdInput(props) {
   const [reveal, setReveal] = useState(false);
 
   const dynamicList = useCallback(
@@ -39,13 +39,13 @@ function TextInput(props) {
         onClick={() => setReveal(!reveal)}
       >
         {reveal ? (
-          <i class="far fa-eye text-sm"></i>
+          <i className="far fa-eye text-sm"></i>
         ) : (
-          <i class="far fa-eye-slash text-sm"></i>
+          <i className="far fa-eye-slash text-sm"></i>
         )}
       </span>
     </div>
   );
 }
 
-export default TextInput;
+export default PswdInput;
