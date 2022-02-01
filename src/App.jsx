@@ -85,6 +85,7 @@ function App() {
                     trim
                     tiny
                     type="text"
+                    verify={verify}
                   />
                 </>
               }
@@ -107,6 +108,7 @@ function App() {
                     trim
                     small
                     type="password"
+                    verify={verify}
                   />
                   <Break />
                   <Input
@@ -191,6 +193,11 @@ const options = [
 
 function clickBtn({ e }) {
   console.log(e);
+}
+
+function verify(value) {
+  if (value.length > 4) return true;
+  else return false;
 }
 
 export default App;

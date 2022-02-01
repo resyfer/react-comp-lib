@@ -1,8 +1,33 @@
-import { useCallback } from "react";
+import { useState, useCallback } from "react";
 import "./TextInput.scss";
 
 function TextInput(props) {
-  const dynamicList = useCallback(
+  const [verified, setVerified] = useState(true);
+
+  const staticInputList = useCallback(
+    () => ({
+      width: "w-full",
+      height: "h-full",
+      padding: "pl-3 pr-2",
+      background: "bg-transparent",
+      top: "top-1/2",
+      translate: "-translate-y-1/2",
+      border: "rounded box-border border-2",
+      text: "text-primary",
+    }),
+    []
+  )();
+
+  const dynamicInputList = useCallback(
+    () => ({
+      borderColor: verified
+        ? "border-primary/10 focus:border-primary"
+        : "border-rose-600",
+    }),
+    [verified]
+  )();
+
+  const dynamicContainerList = useCallback(
     () => ({
       width: props.tiny
         ? "w-1/2 lg:w-1/4"
@@ -13,23 +38,54 @@ function TextInput(props) {
     [props]
   )();
 
+  const staticSpanList = useCallback(
+    () => ({
+      padding: "pl-3 pr-2",
+      top: "top-1/2",
+      translate: "-translate-y-1/2",
+      pointerEvents: "pointer-events-none",
+    }),
+    []
+  )();
+
+  const dynamicSpanList = useCallback(
+    () => ({
+      color: verified ? "text-primary" : "text-rose-500",
+    }),
+    [verified]
+  )();
+
   return (
-    <div className={`input-cont h-12 ${Object.values(dynamicList).join(" ")}`}>
+    <div
+      className={`input-cont h-12 ${Object.values(dynamicContainerList).join(
+        " "
+      )}`}
+    >
       <input
-        className="input-elem w-full bg-transparent pl-3 pr-2 h-full top-1/2 -translate-y-1/2 box-border border-2 border-primary/10 rounded focus:border-primary text-primary"
+        className={`input-elem
+        ${Object.values(staticInputList).join(" ")}
+        ${Object.values(dynamicInputList).join(" ")}`}
         type="text"
         htmlFor={props.for}
         name={props.name}
-        onChange={(e) =>
+        onChange={(e) => {
+          if (typeof props.verify === "function")
+            setVerified(props.verify(e.target.value.trim()));
+
           props.setValue(() => {
             if (props.trim) return e.target.value.trim();
             return e.target.value;
-          })
-        }
+          });
+        }}
         value={props.value}
         placeholder={props.placeholder} //Hidden in css but required for selectors
       />
-      <span className="input-text pl-3 pr-2 top-1/2 -translate-y-1/2 pointer-events-none text-primary">
+      <span
+        className={`input-text
+        ${Object.values(staticSpanList).join(" ")}
+        ${Object.values(dynamicSpanList).join(" ")}`}
+      >
+        {" "}
         {props.placeholder}
       </span>
     </div>
