@@ -16,7 +16,7 @@ function OptionsInput(props) {
             checked={
               props.multiple
                 ? props.value.includes(index)
-                : props.value == index
+                : props.value === index
             }
             className="checkbox h-5 w-5 bg-primary"
             onChange={(e) => {
@@ -27,7 +27,7 @@ function OptionsInput(props) {
               } else {
                 if (props.multiple)
                   props.setValue(() =>
-                    props.value.filter((elem) => elem != index)
+                    props.value.filter((elem) => elem !== index)
                   );
                 else props.setValue(-1);
               }
