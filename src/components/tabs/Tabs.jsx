@@ -1,5 +1,13 @@
 import { useState } from "react";
 
+/**
+ * Props:
+ *    data ([{
+ *        title (string)
+ *        body (JSX Element)
+ *    }])
+ */
+
 function Tabs(props) {
   const [open, setOpen] = useState(0);
 
