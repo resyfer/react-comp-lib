@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
  *    text (string)
  *    link (string)
  *    flat (bool)
- *    size (string: small || large)
+ *    size (string: small | large)
  *    disabled (bool)
  *    outline (bool)
  *    classList ([string])
@@ -41,8 +41,10 @@ function Button(props) {
 
   const border = useCallback(() => {
     if (props.outline) {
-      if (props.small) {
+      if (props.size === "small") {
         return "border";
+      } else if (props.size === "large") {
+        return "border-3";
       } else {
         return "border-2";
       }
@@ -75,7 +77,7 @@ function Button(props) {
       disabled: props.disabled ? "cursor-not-allowed" : "",
     }),
     [props, border, size]
-  )(props);
+  )();
 
   return (
     <button

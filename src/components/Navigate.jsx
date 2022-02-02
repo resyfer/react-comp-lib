@@ -15,6 +15,21 @@ function Navigate() {
           </li>
         </ul>
       </li>
+      <li>
+        {" "}
+        Forms
+        <ul className="list-decimal ml-4">
+          <li>
+            <Link to="/text-input">Text Input</Link>
+          </li>
+          <li>
+            <Link to="/pswd-input">Password Input</Link>
+          </li>
+          <li>
+            <Link to="/options-input">Options Input</Link>
+          </li>
+        </ul>
+      </li>
     </ul>
   );
 }
