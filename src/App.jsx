@@ -135,7 +135,7 @@ function App() {
                     options={options}
                     type="options"
                   />
-                  <p>Choices Index: {optionsValue}</p>
+                  <p>Choice: {optionsValue?.toString()}</p>
                   <Break />
                   <p>Multiple Choice</p>
                   <Input

@@ -52,7 +52,7 @@ function OptionsInput(props) {
             checked={
               props.multiple
                 ? props.value.includes(option.value)
-                : props.value === index
+                : props.value === option.value
             }
             className={`checkbox ${Object.values(optionClass).join(" ")} ${
               option.disabled ? "cursor-not-allowed" : ""
@@ -63,13 +63,13 @@ function OptionsInput(props) {
               } else if (e.target.checked) {
                 if (props.multiple)
                   props.setValue(() => [...props.value, option.value]);
-                else props.setValue(index);
+                else props.setValue(option.value);
               } else {
                 if (props.multiple)
                   props.setValue(() =>
                     props.value.filter((elem) => elem !== option.value)
                   );
-                else props.setValue(-1);
+                else props.setValue(null);
               }
             }}
           />
