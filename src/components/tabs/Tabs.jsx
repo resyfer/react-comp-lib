@@ -17,7 +17,7 @@ function Tabs(props) {
         <div className="tab-titles flex flex-row flex-wrap">
           {props?.data.map((tab, index) => (
             <div
-              className={`tab-title duration-150 ease-linear cursor-pointer mr-1 text-back py-2 px-3 rounded ${
+              className={`tab-title duration-150 ease-linear cursor-pointer mr-1 mb-1 text-back py-2 px-3 rounded ${
                 open === index ? "bg-primary" : "bg-secondary"
               }`}
               key={tab.title}
