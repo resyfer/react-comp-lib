@@ -10,6 +10,8 @@ import ButtonGroup from "./components/buttons/ButtonGroup";
 
 import Input from "./components/form/Input";
 
+import Accordion from "./components/accordion/Accordion";
+
 function App() {
   const [textInputValue, setTextInputValue] = useState("");
   const [optionsValue, setOptionsValue] = useState(-1);
@@ -133,7 +135,7 @@ function App() {
                     options={options}
                     type="options"
                   />
-                  <p>Choices Index: {optionsValue}</p>
+                  <p>Choice: {optionsValue?.toString()}</p>
                   <Break />
                   <p>Multiple Choice</p>
                   <Input
@@ -144,6 +146,18 @@ function App() {
                     multiple
                   />
                   <p>Choices: [{multiplOptionsValue.join(", ")}]</p>
+                </>
+              }
+            />
+            <Route
+              path="accordion"
+              element={
+                <>
+                  <p>Single</p>
+                  <Accordion data={accordionData} />
+                  <Break />
+                  <p>Multiple</p>
+                  <Accordion multiple data={accordionData} />
                 </>
               }
             />
@@ -206,5 +220,60 @@ function verify(value) {
       error: "Atleast 4 letters long",
     };
 }
+
+const accordionData = [
+  {
+    title: "Title 1",
+    body: (
+      <>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a velit
+        ac augue dictum luctus id nec est. Suspendisse ut commodo arcu. Quisque
+        turpis urna, tristique sed mauris vitae, convallis pretium tellus.
+        Suspendisse suscipit vitae lectus aliquet dignissim. Etiam vel dui id
+        arcu cursus rutrum. Donec ut posuere enim, id aliquam quam. Vestibulum
+        pharetra nulla sapien, sed maximus neque pellentesque ac.
+        <br />
+        <br />
+        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
+        cubilia curae; Nullam mollis dui sed massa lobortis pharetra congue id
+        neque. Aenean pretium sapien eget pulvinar pharetra. Nunc faucibus
+        tortor in molestie cursus. Maecenas placerat quam libero, nec placerat
+        nibh sagittis sed. In non rutrum ante. Nulla facilisi. Nam fermentum
+        aliquet mi eget sollicitudin. Nam et risus elit. Pellentesque sit amet
+        mi molestie, molestie mi eget, ornare neque. Morbi ut nunc id nisl
+        egestas bibendum ornare id tortor. Aenean mauris magna, hendrerit et
+        quam ac, laoreet pretium risus. Fusce vel egestas metus. Vivamus
+        faucibus facilisis risus in iaculis.
+      </>
+    ),
+  },
+  {
+    title:
+      "An unncessarily long title so that I can show the title wraps when it exceeds the range of the container but I can't seem to get this long enough. This needs to be soooo long ugh.",
+    body: (
+      <>
+        Donec eros ipsum, auctor sed convallis a, iaculis consectetur purus.
+        Integer blandit porta quam nec dignissim. Morbi orci justo, commodo nec
+        aliquet non, mollis at mauris. Nunc consequat purus id eros tincidunt,
+        eget ultrices lectus dictum. In et quam ut mauris facilisis vulputate
+        vitae a nisl. Suspendisse maximus arcu non bibendum suscipit. Nam
+        convallis nunc ligula, ac sollicitudin quam commodo sed. Vivamus quis
+        augue nec nisl blandit porttitor. Quisque nec tristique augue. Etiam
+        faucibus consequat ligula ac auctor. Vestibulum imperdiet ligula vitae
+        augue feugiat, non bibendum nulla dictum. Donec vestibulum vestibulum
+        rhoncus.
+        <br />
+        <br />
+        Ut convallis lacus eu neque feugiat semper. Etiam sodales sagittis purus
+        nec tincidunt. Phasellus tempor, tortor ac gravida placerat, massa justo
+        sodales diam, sit amet gravida lectus ante vitae felis. Lorem ipsum
+        dolor sit amet, consectetur adipiscing elit. Quisque eget finibus
+        sapien, non venenatis turpis. Cras elementum risus hendrerit ex
+        consequat, vel pellentesque nibh tempor. Aenean non quam mollis, rutrum
+        nunc sed, finibus sem.
+      </>
+    ),
+  },
+];
 
 export default App;
