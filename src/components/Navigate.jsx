@@ -30,6 +30,9 @@ function Navigate() {
           </li>
         </ul>
       </li>
+      <li>
+        <Link to="/accordion">Accordion</Link>
+      </li>
     </ul>
   );
 }
