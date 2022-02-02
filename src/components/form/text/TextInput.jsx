@@ -112,13 +112,15 @@ function TextInput(props) {
           {props.placeholder}
         </span>
       </div>
-      <div
-        className={
-          "error text-rose-500 text-sm ml-2 " + dynamicContainerList.width
-        }
-      >
-        {error && <i className="fas fa-times"></i>}&nbsp;&nbsp;{error}
-      </div>
+      {error && (
+        <div
+          className={
+            "error text-rose-500 text-sm ml-2 " + dynamicContainerList.width
+          }
+        >
+          <i className="fas fa-times"></i>&nbsp;&nbsp;{error}
+        </div>
+      )}
     </>
   );
 }
