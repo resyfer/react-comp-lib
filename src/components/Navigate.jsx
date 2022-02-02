@@ -33,6 +33,9 @@ function Navigate() {
       <li>
         <Link to="/accordion">Accordion</Link>
       </li>
+      <li>
+        <Link to="/tabs">Tabs</Link>
+      </li>
     </ul>
   );
 }
