@@ -76,6 +76,7 @@ function App() {
                     trim
                     small
                     type="text"
+                    verify={verify}
                   />
                   <Break />
                   <Input
@@ -85,7 +86,6 @@ function App() {
                     trim
                     tiny
                     type="text"
-                    verify={verify}
                   />
                 </>
               }
@@ -196,8 +196,15 @@ function clickBtn({ e }) {
 }
 
 function verify(value) {
-  if (value.length > 4) return true;
-  else return false;
+  if (value.length > 4)
+    return {
+      truth: true,
+    };
+  else
+    return {
+      truth: false,
+      error: "Atleast 4 letters long",
+    };
 }
 
 export default App;

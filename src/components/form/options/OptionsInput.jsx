@@ -4,6 +4,7 @@ import "./OptionsInput.scss";
 
 /**
  * Props:
+ *    type ("options")
  *    value (int | [any])   [useState, stores index for single, array of values for multiple]
  *    setValue    [useState]
  *    options ({
@@ -12,7 +13,6 @@ import "./OptionsInput.scss";
  *        disabled: true/false (default false)
  *    })
  *    multiple (bool)  [True makes it multiple choice]
- *    type ("options")
  */
 
 function OptionsInput(props) {
