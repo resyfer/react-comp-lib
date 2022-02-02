@@ -1,0 +1,29 @@
+.input-cont {
+  position: relative;
+}
+
+.input-elem {
+  position: absolute;
+  outline: none;
+  transition: 0.15s ease-in-out;
+}
+
+.input-text {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.input-elem::placeholder {
+  color: #00000000;
+}
+
+.input-elem:focus + .input-text,
+.input-elem:not(:placeholder-shown) + .input-text {
+  transform: translate(0, -50%);
+  top: 0%;
+  padding: 0 0.6rem;
+  margin-left: 0.25rem;
+  font-size: 0.8rem;
+  transition: 0.1s ease-in-out;
+  @apply bg-back;
+}

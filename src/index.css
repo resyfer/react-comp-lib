@@ -2,6 +2,8 @@
 
 body {
   font-family: "Nunito", sans-serif;
+  min-height: 100%;
+  @apply bg-back;
 }
 
 @tailwind base;

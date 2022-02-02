@@ -1,0 +1,24 @@
+.checkbox {
+  visibility: hidden;
+
+  &::after {
+    content: "";
+    visibility: visible;
+    height: 100%;
+    width: 100%;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    @apply rounded;
+    @apply text-back;
+    @apply bg-primary/10;
+    transition: 0.15s ease-in-out;
+  }
+
+  &:checked::after {
+    content: "\2713";
+    @apply bg-primary;
+  }
+}
