@@ -6,6 +6,12 @@ My component library for React using Tailwind CSS
 
 ## Usage
 
+Base Setup:
+- Have `React`, `TailwindCSS`
+- Add [FontAwesome](https://fontawesome.com/) CDN to `index.html`
+- Copy contents of `index.css`
+- Add configs from `tailwing.config.js`
+
 ### Button
 
 ```js
@@ -13,6 +19,8 @@ import Button from "./components/buttons/Button";
 
 <Button ...props />
 ```
+
+Copy Folder: `src/components/buttons`
 
 Button props:
 
@@ -34,6 +42,8 @@ import ButtonGroup from "./components/buttons/ButtonGroup";
 
 <ButtonGroup ...props buttons={buttonGroupData} />
 ```
+
+Copy Folder: `src/components/buttons`
 
 ButtonGroup:
 - Props:
@@ -82,6 +92,9 @@ import Input from "./components/form/Input";
 
 <Input type={inputType} ...props />
 ```
+
+Copy Folder: `src/components/form`
+
 Input:
 - type ("text" (default) | "password" | "options")
 
@@ -102,3 +115,39 @@ Input:
 **NOTE**: Using *reference data types* as values may have undesirable outcomes. Use array for `value` only when `multiple` is `true`
   - setValue  [**useState[1]**]
   - options ([{name: string, value: any, disabled: bool (default `false`)}])
+
+<hr/>
+
+### Accordion
+
+```js
+import Accordion from "./components/accordion/Accordion";
+
+<Accordion ...props data={accordionData} />
+```
+
+Copy Folder: `src/components/accordion`
+
+Accordion:
+- Props
+  - multiple (bool (default: false) [Multiple open, or only single open]
+- `accordionData`: [
+  - title (string)
+  - body (JSX Element)
+]
+
+### Tabs
+
+```js
+import Tabs from "./components/tabs/Tabs";
+
+<Tabs data={tabsData}>
+```
+
+Copy Folder: `src/components/tabs`
+
+Tabs
+- `tabsData`: [
+  - title (string)
+  - body (JSX Element)
+]
