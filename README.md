@@ -7,13 +7,15 @@ My component library for React using Tailwind CSS
 ## Usage
 
 ### Button
+
 `<Button ...props />`
 
 Button props:
+
 - text (string)
 - link (string)
 - flat (bool)
-- size (string: "small" || "large")
+- size (string: "small" | "large")
 - disabled (bool)
 - outline (bool)
 - classList ([string])
@@ -22,6 +24,7 @@ Button props:
 <hr/>
 
 ### ButtonGroup
+
 ```
 <ButtonGroup ...props buttons={buttonGroupData} />
 
@@ -48,6 +51,7 @@ const buttonGroupData = [
 ```
 
 ButtonGroup:
+
 - Props:
   - flat (bool)
   - small (bool)
