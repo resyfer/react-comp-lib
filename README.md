@@ -36,7 +36,6 @@ import ButtonGroup from "./components/buttons/ButtonGroup";
 ```
 
 ButtonGroup:
-
 - Props:
   - flat (bool)
   - small (bool)
@@ -73,3 +72,33 @@ const buttonGroupData = [
   },
 ];
 ```
+
+<hr/>
+
+### Input
+
+```js
+import Input from "./components/form/Input";
+
+<Input type={inputType} ...props />
+```
+Input:
+- type ("text" (default) | "password" | "options")
+
+#### Type: "text" | "password"
+- Props:
+  - value (string)    [**useState[0]**]
+  - setValue  [**useState[1]**]
+  - placeholder (string)
+  - trim (bool)
+  - small (bool)
+  - tiny (bool) [**Use either small or tiny, not both if using**]
+  - verify (function(value) => ({truth: bool, error: string}))  [Use to verify if value is allowed]
+
+#### Type: "options"
+- Props:
+  - multiple (bool)
+  - value (any | [any])    [**useState[0]**] <br/>
+**NOTE**: Using *reference data types* as values may have undesirable outcomes. Use array for `value` only when `multiple` is `true`
+  - setValue  [**useState[1]**]
+  - options ([{name: string, value: any, disabled: bool (default `false`)}])
